@@ -14,6 +14,9 @@ body {
   overflow: hidden;
   background-color: #325c80;
   box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+  width: 100%;
+  position: fixed;
+  z-index: 100;
 }
 
 .topnav a {
@@ -40,13 +43,6 @@ body {
   display: none;
 }
 
-.container {
-  display: inline-block;
-  cursor: pointer;
-  float: right;
-  height: 21px;
-}
-
 .bar1, .bar2, .bar3 {
   width: 35px;
   height: 5px;
@@ -60,10 +56,8 @@ body {
   width: 100%;
   background-color: #325c80;
   padding: 128px 0px 128px;
-  position: absolute;
-  top: 48px;
-  z-index: -1;
-  height: 250px;
+  position: relative;
+  height: 100px;
 }
 
 .Welcome{
@@ -82,6 +76,83 @@ body {
 .change .bar3 {
   transform: rotate(45deg) translate(-8px, -8px);
   background-color: black;
+}
+
+.row {
+	display: flex;
+}
+
+.column {
+	flex: 50%;
+	padding: 10px;
+	height: 200px;
+	border: 1px solid;
+	margin-left: 5px;
+	margin-right: 5px;
+	margin-top: 5px;
+}
+
+.container1 {
+	background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://apps.na.collabserv.com/files/form/api/library/819cca6b-3a12-4f13-9f12-0699c75d6660/document/0901570a-fbf1-4cd3-874c-e37e11d72958/thumbnail?renditionKind=largeview");
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	position: relative;
+}
+
+.container2 {
+	background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://apps.na.collabserv.com/files/form/api/library/819cca6b-3a12-4f13-9f12-0699c75d6660/document/67bb258c-2250-4b82-9875-e0bef0a0e369/thumbnail?renditionKind=largeview");
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	position: relative;
+}
+
+.container3 {
+	background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	position: relative;
+}
+
+.title {
+	display: block;
+	text-align: center;
+	color: white;
+}
+
+.message1, .message2, .message3 {
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	height: 25%;
+	width: 100%;
+	opacity: 0;
+	transition: .5s ease;
+	background-color: #325c80;
+}
+
+.text {
+	color: white;
+	font-size: 20px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	text-align: center;
+}
+
+.container1:hover .message1{
+	opacity: 0.7;
+}
+
+.container2:hover .message2{
+	opacity: 0.7;
+}
+
+.container3:hover .message3{
+	opacity: 0.7;
 }
 
 @media screen and (max-width: 810px) {
@@ -109,13 +180,6 @@ body {
   .logo{
 	display: none;
 	}
-  .header{ 
-	position: absolute;
-	top: 48px;
-	z-index: -1;
-	width: 100%;
-	height: 200px;
-	}
 }
 </style>
 </head>
@@ -123,10 +187,10 @@ body {
 
 <div class="topnav" id="myTopnav">
   <a href="#home" class="active">Home</a>
-  <a href="#news">Academy/Training</a>
-  <a href="#contact">All Hands</a>
-  <a href="#about">Early Professional Group</a>
-  <img class = "logo" src = "https://apps.na.collabserv.com/files/form/api/library/819cca6b-3a12-4f13-9f12-0699c75d6660/document/67bb258c-2250-4b82-9875-e0bef0a0e369/thumbnail?renditionKind=largeview" style = "height: 50px; float: right;"></img>
+  <a href="#Training">Academy/Training</a>
+  <a href="#All Hands">All Hands</a>
+  <a href="#EPG">Early Professional Group</a>
+  <img class = "logo" src = "https://apps.na.collabserv.com/files/form/api/library/819cca6b-3a12-4f13-9f12-0699c75d6660/document/67bb258c-2250-4b82-9875-e0bef0a0e369/thumbnail?renditionKind=largeview" alt = "Cyber and Biometrics" style = "height: 54px; float: right;"></img>
    <a href="javascript:void(0);" class="icon" onclick="myFunction(this)">
 	<div class = "bar1"></div>
 	<div class = "bar2"></div>
@@ -134,8 +198,33 @@ body {
   </a>
 </div>
 
-<div class = "header">
-<h1 style = "text-align: center; color: white;">Welcome to the Cyber &amp Biometrics Comunity!</h1>
+<div class = "header" id ="myHeader">
+<h1 style = "text-align: center; color: white;">Welcome to the Cyber &amp Biometrics Community!</h1>
+</div>
+
+<div class = "row">
+	<div class = "column container1">
+		<h2 class = "title">The John Lainhart Academy</h2>
+			<div class = "message1">
+				<div class = "text">Take Me There!</div>
+			</div>
+	</div>
+	<div class = "column container2">
+		<h2 class = "title">All Hands</h2>
+			<div class = "message2">
+				<div class = "text">Take Me There!</div>
+			</div>
+	</div>
+	<div class = "column container3">
+		<h2 class = "title">The Early Professional Group</h2>
+			<div class = "message3">
+				<div class = "text">Take Me There!</div>
+			</div>
+	</div>
+</div>
+
+<div style = "height: 300px; background-color: white;">
+<a href = "https://www.google.com">TEST</a>
 </div>
 
 <script>

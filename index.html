@@ -86,10 +86,9 @@ body {
 	flex: 50%;
 	padding: 10px;
 	height: 200px;
-	border: 1px solid;
-	margin-left: 5px;
-	margin-right: 5px;
-	margin-top: 5px;
+	border: 1px solid white;
+	border-radius: 25px;
+	overflow: hidden;
 }
 
 .container1 {
@@ -129,12 +128,13 @@ body {
 	opacity: 0;
 	transition: .5s ease;
 	background-color: #325c80;
+	border: 1px solid white;
 }
 
 .text {
 	color: white;
-	font-size: 20px;
-	position: absolute;
+	font-size: 1.5vw;
+	position: relative;
 	top: 50%;
 	left: 50%;
 	-webkit-transform: translate(-50%, -50%);
@@ -155,7 +155,7 @@ body {
 	opacity: 0.7;
 }
 
-@media screen and (max-width: 810px) {
+@media screen and (max-width: 850px) {
   .topnav a:not(:first-child) {display: none;}
   .topnav a.icon {
     float: right;
@@ -165,7 +165,7 @@ body {
   }
 }
 
-@media screen and (max-width: 810px) {
+@media screen and (max-width: 850px) {
   .topnav.responsive {position: fixed; width: 100%;}
   .topnav.responsive .icon {
     position: absolute;
@@ -180,6 +180,19 @@ body {
   .logo{
 	display: none;
 	}
+
+	.text {
+	color: white;
+	font-size: 2vw;
+	position: relative;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	text-align: center;
+	}
+
 }
 </style>
 </head>
@@ -204,27 +217,24 @@ body {
 
 <div class = "row">
 	<div class = "column container1">
-		<h2 class = "title">The John Lainhart Academy</h2>
 			<div class = "message1">
-				<div class = "text">Take Me There!</div>
+				<div class = "text">The John Lainhart Academy</div>
 			</div>
 	</div>
 	<div class = "column container2">
-		<h2 class = "title">All Hands</h2>
 			<div class = "message2">
-				<div class = "text">Take Me There!</div>
+				<div class = "text">C&ampB All Hands</div>
 			</div>
 	</div>
 	<div class = "column container3">
-		<h2 class = "title">The Early Professional Group</h2>
 			<div class = "message3">
-				<div class = "text">Take Me There!</div>
+				<div class = "text">The Early Professional Group</div>
 			</div>
 	</div>
 </div>
 
 <div style = "height: 300px; background-color: white;">
-<a href = "https://vmluongo19.github.io/twitter-embed/index.html">TEST</a>
+
 </div>
 
 <script>
